@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리는 바닐라와 달리 인터페이스에 초점을 두고 개발된 것이라 디자인관점에 잘 맞춰져 있음</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+        crossorigin="anonymous">
+    </script>
+        <!-- <script>
+            $(document).ready(function(){
+                $("body").css("background", "red").html("<p></p><h2></h2>");
+                $("h2").css("color", "white");
+                $("p").css("color",$("h2").css("color"));
+                //go랑 come을 같이 쓴다. $("p").css("color",$("h2").css("color")); h2의 색깔을 가져와. h2색이 바뀌면 p색도 바뀌는거야.
+            });
+        </script> -->
+
+        <script>
+            $(document).ready(function(){
+                $("p").addClass("content").html("제이쿼리로 삽입하기");
+                $("h2").addClass("title").html("<spna>동적</span>개체");
+            });
+        </script>
+
+    <style>
+        body{
+            background-color: #ff0000;
+        }
+        h2{
+            color:#ffffff
+        }
+        p{
+            color:#ffff00
+        }
+
+    </style>
+
+  
+</head>
+<body>
+    <!-- <p class="content"> 제이쿼리로 삽입하기 -->
+    <p>
+        동적개체
+    </p>
+    <!-- <h2 class="title"<span>동적</span>객체</h2>-->
+    <h2>
+        동적개체
+    </h2>
+</body>
+</html>

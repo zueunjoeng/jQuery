@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous">
+</script>
+</head>
+<body>
+    <div class="count">
+        0
+    </div>
+<!-- 제이쿼리 -->
+ <script>
+        let count =0;
+        setInterval(function(){
+            count++;
+            count %=11; //10까지 실행되면 다시 처음0부터 시작. 11은 절대 될 수 없음
+           $(".count").html(count);
+        }, 1000);
+    </script>
+
+<!-- 자바스크립트<script>
+    let count =0;
+    setInterval(function(){
+        count++;
+       document.querySelector(".count").innerHTML = count;
+    }, 1000);
+</script> -->
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주기적으로 실행 setInterval</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(function(){
+            const bglist =["pink", "red", "gray", "green"];
+            let count = 0; //여기는 0~3사이 만 적자. 안 그러면 초기 1회실행에서 오류가 난다.
+
+            setInterval(function(){
+                count++; //실행될 수록 숫자가 늘어간다.
+                count = count % bglist.length; //늘어간 숫자를 bglist.length(4)로 나눈다. 나머지값은 0,1,2,3만 나올 것이다.
+                $("body").css("background", bglist[count]);
+            }, 5000); 
+            //5초뒤 5초마다 실행하겠다. 밑에 1회실행된다는 것을 하나 넣어둬야하고. 
+            //set인터벌은 1회실행되는 애가 먼저보이고 바뀔때, 그때부터 시작하는 것이다. > 스와이퍼가 이걸 사용한것.
+
+            $("body").css("background",bglist[count]); //화면이 열리자마자 1회 실행
+        }); //자바스크립트가 끼어있음.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
