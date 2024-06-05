@@ -9,15 +9,20 @@
     crossorigin="anonymous">
 </script>
 
-<!-- 자바스크립트 -->
+
 <script>
     $(function(){
         const aniwidth = $(".banner").width(); //비어있으면 가져오고 class가 적혀있으면 class가져오는거야. class가 아니라도
         $(".banner-slide").width(aniwidth);
 
         setInterval(function(){
-            $(".banner-wrapper").animate({"marginLeft" : "-="+aniwidth}, 400) //"-="+aniwidth aniwidth값을 추가로 빼겠다는 뜻. 
-        }, 3000) //.animate({"marginLeft" :-aniwidth}, 4000)>앞({})에는 json 뒤에는 스피드
+            $(".banner-wrapper").animate({"marginLeft" : "-="+aniwidth}, 400, function(){
+                $(".banner-slide").eq(0).appendTo($(".banner-wrapper")); 
+                //$(".banner-slide :first-child").appendTo($(".banner-wrapper"));도 가능. 단 eq은 들어갈수없다. ->발전성 없는 개발
+                //제이쿼리는 $(".banner-slide").appendTo($(".banner-wrapper")); > 쿼리셀렉터all로 부른것. 
+                $(".banner-wrapper").css({"marginLeft" : 0})
+            }) 
+        }, 3000) //.animate({"marginLeft" :-aniwidth}, 4000, function(){})>앞({})에는 json 뒤에는 스피드, function(){}은 앞에 두개 끝나고 실행
 
         
     })
