@@ -15,8 +15,11 @@
         const aniwidth = $(".banner").width(); //비어있으면 가져오고 class가 적혀있으면 class가져오는거야. class가 아니라도
         $(".banner-slide").width(aniwidth);
 
-        // $(".banner-slide").css("marginLeft", -aniwidth)
-        $(".banner-wrapper").animate({"marginLeft" :-aniwidth}, 4000) //앞({})에는 json 뒤에는 스피드
+        setInterval(function(){
+            $(".banner-wrapper").animate({"marginLeft" : "-="+aniwidth}, 400) //"-="+aniwidth aniwidth값을 추가로 빼겠다는 뜻. 
+        }, 3000) //.animate({"marginLeft" :-aniwidth}, 4000)>앞({})에는 json 뒤에는 스피드
+
+        
     })
 </script> 
 
