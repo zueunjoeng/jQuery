@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous">
+</script>
+
+<!-- 자바스크립트 -->
+<script>
+    $(function(){
+        const aniwidth = $(".banner").width(); //비어있으면 가져오고 class가 적혀있으면 class가져오는거야. class가 아니라도
+        $(".banner-slide").width(aniwidth);
+
+        // $(".banner-slide").css("marginLeft", -aniwidth)
+        $(".banner-wrapper").animate({"marginLeft" :-aniwidth}, 4000) //앞({})에는 json 뒤에는 스피드
+    })
+</script> 
+
+<style>
+    *{margin:0; padding:0;}
+    .banner{
+        overflow : hidden;
+    }
+    .banner-slide{
+        height: calc(100vh - 80px);
+        /* width:100vw; 반드시 자바스크립트로 너비를 준다 */
+    }
+    .bg0{
+        background-color: bisque;
+    }
+    .bg1{
+        background-color: blueviolet;
+    }
+    .bg2{
+        background-color: aquamarine;
+    }
+    .banner-wrapper{
+        display: flex;
+        width: 1000000px;
+    }
+</style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-wrapper">
+            <div class="banner-slide bg0"></div>
+            <div class="banner-slide bg1"></div>
+            <div class="banner-slide bg2"></div>
+        </div>
+        <div class="banner-btn"></div>
+    </div>
+
+</body>
+</html>
